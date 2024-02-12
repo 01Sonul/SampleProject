@@ -1,6 +1,7 @@
 package Assignments;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -90,18 +91,35 @@ public class MakeMyTrip {
 				WebElement scrollToTop = driver.findElement(By.xpath("//font[text()='SCROLL TO TOP']"));
 				a.scrollToElement(scrollToTop);
 				
+				//fetching prices
+				List<WebElement> totalFlightPrices = driver.findElements(By.xpath("//div[@class='blackText fontSize18 blackFont white-space-no-wrap clusterViewPrice']"));
+				//System.out.println("Total Flight Prices are " + totalFlightPrices.size());
 				
+				//fetching names
+				List<WebElement> totalFlightNames = driver.findElements(By.xpath("//div[@class='blackText fontSize18 blackFont white-space-no-wrap clusterViewPrice']/ancestor::div[@class='makeFlex spaceBetween']/descendant::p[@class='boldFont blackText airlineName']"));
+				//System.out.println("Total Flight Names are " + totalFlightNames.size());
 				
-				
+				for(int j=0; j<totalFlightPrices.size(); j++) {
+					String txtPrice = "";
+					String Price = totalFlightPrices.get(j).getText();
+					
+					for(int i = 0; i<Price.length();i++) {
+						if(Price.charAt(i)>= '0' && Price.charAt(i)<= '9') {
+							txtPrice = txtPrice + Price.charAt(i);
+						}
+					}
+					
+					int intPrice = Integer.parseInt(txtPrice);
+					String strName = totalFlightNames.get(j).getText();
+					System.out.println(strName +" -> "+ intPrice);
+				}
+				break;
 			}
+			
 			catch(Exception e){
-				
+				js.executeScript("window.scrollBy(0,document.body.scrollHeight)");	
 			}
 		}
-		
+		driver.quit();
 	}	
 }
-
-
-
-
