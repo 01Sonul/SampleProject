@@ -1,5 +1,5 @@
 package Assignments;
-
+// mvn -Dtest=MakeMyTripEndToEnd test
 import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -27,14 +27,12 @@ public class MakeMyTripEndToEnd {
 		String Month = "February";
 
 		WebDriver driver = new ChromeDriver();
-
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://www.makemytrip.com/");
 
 		// Handle Frame
-		WebElement iframe = driver
-				.findElement(By.xpath("//iframe[@id='webklipper-publisher-widget-container-notification-frame']"));
+		WebElement iframe = driver.findElement(By.xpath("//iframe[@id='webklipper-publisher-widget-container-notification-frame']"));
 		driver.switchTo().frame(iframe);
 		WebElement X = driver.findElement(By.id("webklipper-publisher-widget-container-notification-close-div"));
 		X.click();
@@ -84,7 +82,7 @@ public class MakeMyTripEndToEnd {
 		Actions a = new Actions(driver);
 
 		// HashMap
-		LinkedHashMap<String, Integer> hmap = new LinkedHashMap<String, Integer>();
+		//LinkedHashMap<String, Integer> hmap = new LinkedHashMap<String, Integer>();
 		int count = 0;
 		for (;;) {
 			try {

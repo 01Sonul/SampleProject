@@ -3,8 +3,11 @@ package Assignments;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class MakeMyTrip {
@@ -23,7 +26,12 @@ public class MakeMyTrip {
 		driver.get("https://www.makemytrip.com/");
 		
 		
-		//driver.findElement(By.xpath("//a[@class='close']/child::i[@class='wewidgeticon we_close']")).click();	//closing X
+		//Handling Frame
+		WebElement iframe = driver.findElement(By.xpath("//iframe[@id='webklipper-publisher-widget-container-notification-frame']"));
+		driver.switchTo().frame(iframe);
+		WebElement X = driver.findElement(By.id("webklipper-publisher-widget-container-notification-close-div"));
+		X.click();
+		driver.switchTo().defaultContent();
 		
 		
 		//From
@@ -73,8 +81,24 @@ public class MakeMyTrip {
 			}	
 		}
 		
+		//for scrolling down
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		Actions a= new Actions(driver);
 		
-
+		for(;;) {
+			try {
+				WebElement scrollToTop = driver.findElement(By.xpath("//font[text()='SCROLL TO TOP']"));
+				a.scrollToElement(scrollToTop);
+				
+				
+				
+				
+			}
+			catch(Exception e){
+				
+			}
+		}
+		
 	}	
 }
 
