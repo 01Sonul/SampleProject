@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class MakeMyTrip {
 	
 	@Test
-	public void main(){									// ElementClickInterceptedException
+	public void main(){
 		String City1 = "Bengaluru";
 		String City2 = "Bhubaneswar";
 		String Date = "25";
