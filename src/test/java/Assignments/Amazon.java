@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class Amazon {
 	
 	@Test()
-	public void iPhone14() {
+	public void main() {
 		
 		String Phone = "iPhone 15";
 		
