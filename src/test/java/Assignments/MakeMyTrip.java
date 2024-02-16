@@ -36,13 +36,13 @@ public class MakeMyTrip {
 		
 		
 		//From
-		driver.findElement(By.id("fromCity")).click();
+		driver.findElement(By.xpath("//input[@id='fromCity']")).click();
 		driver.findElement(By.xpath("//input[@placeholder='From']")).sendKeys(""+City1+"");
 		driver.findElement(By.xpath("//p[contains(.,'" + City1 + "')]")).click();
 				
 		
 		//To
-		driver.findElement(By.id("toCity")).click();
+		driver.findElement(By.xpath("//input[@id='toCity']")).click();
 		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys(""+City2+"");
 		driver.findElement(By.xpath("//p[contains(.,'" + City2 + ", India')]")).click();
 		
@@ -117,7 +117,7 @@ public class MakeMyTrip {
 			}
 			
 			catch(Exception e){
-				js.executeScript("window.scrollBy(0,document.body.scrollHeight)");	
+				js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 			}
 		}
 		driver.quit();
