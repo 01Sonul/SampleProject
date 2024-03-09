@@ -54,7 +54,7 @@ public class GoIbibo {
 		searchFlights.click();
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;		//using jsExecutor to scroll to travel_resources
-		//js.executeScript("window.scrollBy(0,document.body.scrollHeight)"); //used for fast scrolling
+		//js.executeScript("window.scrollBy(0,document.body.scrollHeight)"); //scrolling to bottom
 		
 		WebElement travel_resources = driver.findElement(By.xpath("//li[text()='travel resources']"));	//travel resources
 		int y = travel_resources.getLocation().getY();		//fetching location of travel resources

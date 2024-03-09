@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Assignments.BigBasket">
+      <class name="Assignments.Amazon_Brand_Incomplete">
         <methods>
           <include name="main"/>
         </methods>
-      </class> <!-- Assignments.BigBasket -->
+      </class> <!-- Assignments.Amazon_Brand_Incomplete -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -12,7 +12,7 @@ public class Amazon {
 	@Test()
 	public void main() {
 		
-		String Phone = "iPhone 15";
+		String Phone = "Iphone 15";
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -29,9 +29,9 @@ public class Amazon {
 		//xpath for price(static)
 		//WebElement phonePrice = driver.findElement(By.xpath("//span[text()='Sponsored']/ancestor::div[@class='a-row a-spacing-micro']/following-sibling::h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']/descendant::span[text()='Apple iPhone 15 (256 GB) - Blue']/ancestor::div[@class='a-section a-spacing-small a-spacing-top-small']/descendant::span[@class='a-price-whole']"));
 		//xpath for price(Dynamic)
-		WebElement phonePrice = driver.findElement(By.xpath("//span[text()='Sponsored']/ancestor::div[@class='a-row a-spacing-micro']/following-sibling::h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']/descendant::span[text()='Apple "+Phone+" (256 GB) - Blue']/ancestor::div[@class='a-section a-spacing-small a-spacing-top-small']/descendant::span[@class='a-price-whole']"));
+		WebElement phonePrice = driver.findElement(By.xpath("//div[@data-index=\"3\"]/descendant::span[@class='a-price']"));
 		String strphonePrice = phonePrice.getText();
-		System.out.println("Price of the phone is " + strphonePrice);
+		System.out.println("Price of the 1st phone is " + strphonePrice);
 		
 		driver.quit();
 	}
