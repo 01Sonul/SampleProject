@@ -25,7 +25,7 @@ public class Amazon_Brand_Incomplete {
 		driver.findElement(By.id("twotabsearchtextbox")).click();
 		driver.findElement(By.xpath("//input[@placeholder='Search Amazon.in']")).sendKeys(""+Phone+"");
 		driver.findElement(By.id("nav-search-submit-button")).click();
-
+		
 		//scrolling to Deals & Discounts
 		Actions a = new Actions(driver);
 		WebElement dealsAndDiscounts = driver.findElement(By.xpath("//div[@class='s-desktop-width-max s-desktop-content s-opposite-dir s-wide-grid-style sg-row']/div[2]/div/div[3]/span/div/div/div/descendant::span[text()='Deals & Discounts']"));
@@ -38,7 +38,12 @@ public class Amazon_Brand_Incomplete {
 		brand.click();
 		
 		driver.quit();
-	
+		
+		
+		
+		 
 	}
 
 }
+
+

@@ -54,7 +54,7 @@ public class Microsoft {
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);			//comparing
 		
-		//switching control to parent frame
+		//switching control back to parent frame
 		driver.switchTo().window(pWid);	
 				
 		Thread.sleep(2000);
